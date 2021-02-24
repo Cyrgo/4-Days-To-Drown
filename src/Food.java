@@ -11,7 +11,7 @@ public class Food extends Consumable {
         return this.foodType.isCookable();
     }
 
-    //TEST COMMENT
+    //TEST COMMENT AGAIN
     public int getKcal() {
         return this.foodType.getKcal();
     }
