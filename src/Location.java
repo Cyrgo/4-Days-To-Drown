@@ -39,7 +39,7 @@ public abstract class Location {
         ItemRarity rarity = ItemRarity.randomRarity();
         HashMap<ItemRarity,List<Item>> lootTable = getLootTable();
         List<Item> itemList = lootTable.get(rarity);
-
+        return itemList.get((int) (Math.random() * itemList.size()));
     }
 
     public abstract HashMap<ItemRarity, List<Item>> getLootTable();
