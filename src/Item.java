@@ -23,17 +23,6 @@ public abstract class Item {
         System.out.println(this.amount);
     }
 
-    //BANANAS
-    //COCONUTS
-    //MANGOS
-    //PINNEAPPLE
-    //SNACKS
-    //MEDICINE
-    //WATER BOTTLES
-        //EMPTY AND FULL
-    //WEAPONS
-        //RNG
-    //FUEL CANS
-        //EMPTY AND FULL
+
 
 }
