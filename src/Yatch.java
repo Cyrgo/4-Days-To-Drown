@@ -2,13 +2,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Island extends Location {
+public class Yatch extends Location{
 
-    Island(String name, String description) {
+    Yatch(String name, String description) {
         super(name, description);
     }
 
-    @Override
     public HashMap<ItemRarity, List<Item>> getLootTable() {
         HashMap<ItemRarity, List<Item>> lootTable = new HashMap<ItemRarity, List<Item>>();
         List<Item> commonLoot = new ArrayList<Item>();
@@ -25,5 +24,4 @@ public class Island extends Location {
         lootTable.put(ItemRarity.RARE, rareLoot);
         return lootTable;
     }
-
 }

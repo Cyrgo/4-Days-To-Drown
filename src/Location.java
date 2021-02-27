@@ -4,14 +4,12 @@ import java.util.List;
 public abstract class Location {
     private String name;
     private String description;
-    private String size;
     private Player player;
     private Item item;
 
-    Location(String name, String description, String size) {
+    Location(String name, String description) {
         this.name = name;
         this.description = description;
-        this.size = size;
     }
 
     public String getName() {
@@ -39,6 +37,7 @@ public abstract class Location {
         ItemRarity rarity = ItemRarity.randomRarity();
         HashMap<ItemRarity,List<Item>> lootTable = getLootTable();
         List<Item> itemList = lootTable.get(rarity);
+        System.out.println(itemList);
         return itemList.get((int) (Math.random() * itemList.size()));
     }
 

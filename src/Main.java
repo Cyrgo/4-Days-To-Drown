@@ -20,7 +20,7 @@ public class Main {
         String name = input.nextLine();
         Player player = new Player(name);
         Boat boat = new Boat();
-        Island island = new Island("Island","Small Island","100 meters");
+        Island island = new Island("Island","Small Island");
         boat.boardBoat(player);
         boat.leaveBoat();
         player.printInv();

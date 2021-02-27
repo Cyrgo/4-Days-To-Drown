@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Island extends Location {
+public class CabinCruiser extends Location{
 
-    Island(String name, String description) {
+    CabinCruiser(String name, String description) {
         super(name, description);
     }
 
@@ -25,5 +25,4 @@ public class Island extends Location {
         lootTable.put(ItemRarity.RARE, rareLoot);
         return lootTable;
     }
-
 }
