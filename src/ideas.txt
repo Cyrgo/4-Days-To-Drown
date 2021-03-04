@@ -1,3 +1,11 @@
 method to rng generate item amounts per location:
 math.random() * maxItemAmount
 maxItemAmount
+
+player sanity level
+alcohol = fun
+too much alcohol = hangover
+hangover =
+too much alcohol = alcoholism
+alcoholism must be satisfied or ....... ?????
+
