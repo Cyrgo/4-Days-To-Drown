@@ -1,4 +1,3 @@
-Locations:
-Islands
-Abandoned
-
+method to rng generate item amounts per location:
+math.random() * maxItemAmount
+maxItemAmount

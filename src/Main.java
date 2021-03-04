@@ -25,9 +25,19 @@ public class Main {
         boat.leaveBoat();
         player.printInv();
         island.enterLocation(player);
-        var randomItem = island.getRandomItem();
+        var randomItem= island.getRandomItem();
         player.pickUp(randomItem);
         player.printInv();
+        island.leaveLocation();
+        OilRig oilRig = new OilRig("Oil Rig","It's an oil rig..");
+        boat.boardBoat(player);
+        boat.leaveBoat();
+        oilRig.enterLocation(player);
+        var randomItem2 = oilRig.getRandomItem();
+        player.pickUp(randomItem2);
+        player.printInv();
+
+
     }
 
 }

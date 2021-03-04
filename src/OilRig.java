@@ -14,12 +14,12 @@ public class OilRig extends Location {
         List<Item> commonLoot = new ArrayList<Item>();
         List<Item> uncommonLoot = new ArrayList<Item>();
         List<Item> rareLoot = new ArrayList<Item>();
-        Food banana = new Food(FoodType.BANANA, 1);
-        Food coconut = new Food(FoodType.COCONUT, 1);
-        Food snack = new Food(FoodType.SNACK, 1);
-        commonLoot.add(banana);
-        uncommonLoot.add(coconut);
-        rareLoot.add(snack);
+        Food snack = new Food(FoodType.SNACK,1);
+        SimpleConsumable firstAidKit = new SimpleConsumable(ConsumableType.FIRST_AID_KIT, 1);
+        SimpleConsumable medicine = new SimpleConsumable(ConsumableType.MEDICINE,1);
+        commonLoot.add(snack);
+        uncommonLoot.add(firstAidKit);
+        rareLoot.add(medicine);
         lootTable.put(ItemRarity.COMMON, commonLoot);
         lootTable.put(ItemRarity.UNCOMMON, uncommonLoot);
         lootTable.put(ItemRarity.RARE, rareLoot);
