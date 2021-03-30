@@ -16,6 +16,10 @@ public enum LocationType {
         this.to = to;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public static LocationType randomLocation() {
         int rng = (int) (1+ Math.random() * 100);
         for (LocationType value: LocationType.values()) {
