@@ -1,5 +1,7 @@
 public enum FoodType {
     BANANA(false, "Banana",15,0),
+    CAN_SPAM(true,"Can of Spam",30,0),
+    CAN_TUNA(true,"Can of Tuna",20,5),
     COCONUT(false, "Coconut",10,10),
     MANGO(false,"Mango",5,5),
     PINEAPPLE(false,"Pineapple",10,5),
@@ -17,7 +19,7 @@ public enum FoodType {
     FoodType(boolean isCookable, String name, int kcal, int h2o) {
         this.name = name;
         this.kcal = kcal;
-        this.kcal = h2o;
+        this.h2o = h2o;
     }
 
     public boolean isCookable() {

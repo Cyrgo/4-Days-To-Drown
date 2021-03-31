@@ -14,12 +14,17 @@ public class Island extends Location {
         List<Item> commonLoot = new ArrayList<Item>();
         List<Item> uncommonLoot = new ArrayList<Item>();
         List<Item> rareLoot = new ArrayList<Item>();
+        //Common Loot Objects
+        Food mango = new Food(FoodType.MANGO,1);
+        Food pineapple = new Food(FoodType.PINEAPPLE,1);
+        commonLoot.add(mango);
+        commonLoot.add(pineapple);
+        //Uncommon Loot Objects
         Food banana = new Food(FoodType.BANANA, 1);
+        uncommonLoot.add(banana);
+        //Rare Loot Objects
         Food coconut = new Food(FoodType.COCONUT, 1);
-        Food snack = new Food(FoodType.SNACK, 1);
-        commonLoot.add(banana);
-        uncommonLoot.add(coconut);
-        rareLoot.add(snack);
+        rareLoot.add(coconut);
         lootTable.put(ItemRarity.COMMON, commonLoot);
         lootTable.put(ItemRarity.UNCOMMON, uncommonLoot);
         lootTable.put(ItemRarity.RARE, rareLoot);

@@ -5,8 +5,4 @@ public class Alcohol extends Consumable{
         super(alcoholType.getName(), amount);
         this.alcoholType = alcoholType;
     }
-
-    public String print() {
-        return this.alcoholType.getName();
-    }
 }
