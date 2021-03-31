@@ -50,7 +50,7 @@ public enum AlcoholType {
     }
 
     public static AlcoholType randomAlcohol() {
-        int rng = (int) (1+ Math.random() * 36);
+        int rng = (int) (1+ Math.random() * 35);
         for (AlcoholType value: AlcoholType.values()) {
             if (rng == value.num) {
                 return value;
