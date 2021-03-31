@@ -29,4 +29,5 @@ public enum LocationType {
         }
         return LocationType.ISLAND;
     }
+
 }

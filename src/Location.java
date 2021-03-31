@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class Location {
+public class Location {
     private String name;
     private String description;
     private Player player;
@@ -41,5 +41,7 @@ public abstract class Location {
         return itemList.get((int) (Math.random() * itemList.size()));
     }
 
-    public abstract HashMap<ItemRarity, List<Item>> getLootTable();
+    public HashMap<ItemRarity, List<Item>> getLootTable() {
+        return null;
+    }
 }
