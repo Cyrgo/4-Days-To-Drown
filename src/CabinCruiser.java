@@ -26,7 +26,9 @@ public class CabinCruiser extends Location{
         uncommonLoot.add(firstAid);
         //Rare Loot Objects
         Alcohol alcohol = new Alcohol(AlcoholType.randomAlcohol(),1);
+        BoatItem jerryCan = new BoatItem(BoatItemType.JERRY_CAN,1);
         rareLoot.add(alcohol);
+        rareLoot.add(jerryCan);
         lootTable.put(ItemRarity.COMMON, commonLoot);
         lootTable.put(ItemRarity.UNCOMMON, uncommonLoot);
         lootTable.put(ItemRarity.RARE, rareLoot);

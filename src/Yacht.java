@@ -19,13 +19,17 @@ public class Yacht extends Location{
         commonLoot.add(snack);
         commonLoot.add(tuna);
         //Uncommon Loot Objects
-        Food spam = new Food(FoodType.CAN_SPAM,1);
         SimpleConsumable firstAid = new SimpleConsumable(ConsumableType.FIRST_AID_KIT,1);
-        uncommonLoot.add(spam);
+        Food spam = new Food(FoodType.CAN_SPAM,1);
         uncommonLoot.add(firstAid);
+        uncommonLoot.add(spam);
         //Rare Loot Objects
         Alcohol alcohol = new Alcohol(AlcoholType.randomAlcohol(),1);
+        BoatItem jerryCan = new BoatItem(BoatItemType.JERRY_CAN,1);
+        BoatItem repairParts = new BoatItem(BoatItemType.REPAIR_PARTS,1);
         rareLoot.add(alcohol);
+        uncommonLoot.add(jerryCan);
+        uncommonLoot.add(repairParts);
         lootTable.put(ItemRarity.COMMON, commonLoot);
         lootTable.put(ItemRarity.UNCOMMON, uncommonLoot);
         lootTable.put(ItemRarity.RARE, rareLoot);

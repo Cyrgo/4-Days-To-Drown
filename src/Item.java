@@ -1,6 +1,7 @@
-public abstract class Item {
+public class Item {
     private String name;
     private int amount;
+    private BoatItemType boatItemType;
 
     public Item(String name, int amount) {
         this.name = name;
@@ -19,9 +20,6 @@ public abstract class Item {
         this.amount = amount;
     }
 
-    public void printAmount() {
-        System.out.println(this.amount);
-    }
 
 
 

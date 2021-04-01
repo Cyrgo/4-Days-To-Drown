@@ -27,6 +27,7 @@ public class Main {
         var randomItem = location.getRandomItem();
         player.pickUp(randomItem);
         player.printInv();
+        startGame();
     }
 
 }

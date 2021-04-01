@@ -21,12 +21,13 @@ public class CommercialShip extends Location {
         commonLoot.add(spam);
         commonLoot.add(tuna);
         //Uncommon Loot Objects
-        SimpleConsumable firstAid = new SimpleConsumable(ConsumableType.FIRST_AID_KIT,1);
-        SimpleConsumable medicine = new SimpleConsumable(ConsumableType.MEDICINE,1);
-        uncommonLoot.add(firstAid);
-        uncommonLoot.add(medicine);
+        BoatItem jerryCan = new BoatItem(BoatItemType.JERRY_CAN,1);
+        BoatItem repairParts = new BoatItem(BoatItemType.REPAIR_PARTS,1);
+        uncommonLoot.add(jerryCan);
+        uncommonLoot.add(repairParts);
         //Rare Loot Objects
         Alcohol alcohol = new Alcohol(AlcoholType.randomAlcohol(),1);
+        BoatItem upgradeParts = new BoatItem(BoatItemType.UPGRADE_PARTS,1);
         rareLoot.add(alcohol);
         lootTable.put(ItemRarity.COMMON, commonLoot);
         lootTable.put(ItemRarity.UNCOMMON, uncommonLoot);

@@ -21,9 +21,9 @@ public class CruiseLine extends Location{
         commonLoot.add(spam);
         commonLoot.add(tuna);
         //Uncommon Loot Objects
-        SimpleConsumable firstAid = new SimpleConsumable(ConsumableType.FIRST_AID_KIT,1);
+        BoatItem jerryCan = new BoatItem(BoatItemType.JERRY_CAN,1);
         SimpleConsumable medicine = new SimpleConsumable(ConsumableType.MEDICINE,1);
-        uncommonLoot.add(firstAid);
+        uncommonLoot.add(jerryCan);
         uncommonLoot.add(medicine);
         //Rare Loot Objects
         Alcohol alcohol = new Alcohol(AlcoholType.randomAlcohol(),1);
