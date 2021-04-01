@@ -13,7 +13,7 @@ public class LocationGenerator {
         } else if (type == LocationType.OIL_RIG) {
             return new OilRig("Oil Rig","An oil rig");
         } else {
-            return new Yatch("Yatch","A yatch.");
+            return new Yacht("Yacht","A yacht.");
         }
     }
 }

@@ -4,7 +4,7 @@ public enum LocationType {
     CRUISE_LINE("Cruise Line",34,50),
     ISLAND("Island",51,67),
     OIL_RIG("Oil Rig",68,84),
-    YATCH("Yatch", 85,100);
+    YACHT("Yacht", 85,100);
 
     private String name;
     private int from;

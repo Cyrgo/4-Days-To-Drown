@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Yatch extends Location{
+public class Yacht extends Location{
 
-    Yatch(String name, String description) {
+    Yacht(String name, String description) {
         super(name, description);
     }
 
