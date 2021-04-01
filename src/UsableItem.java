@@ -1,4 +1,4 @@
-public abstract class UsableItem extends Item {
+public class UsableItem extends Item {
 
     private int durability;
 

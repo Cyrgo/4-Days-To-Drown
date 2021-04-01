@@ -1,6 +1,7 @@
 public enum ConsumableType {
     FIRST_AID_KIT("First Aid Kit",0,20,0),
-    MEDICINE("Medicine",65,10,-10);
+    MEDICINE("Medicine",65,10,-10),
+    FULL_WATER_BOTTLE("Full Water Bottle",0,0,15);
 
     private String name;
     private int cure;

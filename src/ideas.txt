@@ -5,9 +5,4 @@ hangover =
 too much alcohol = alcoholism
 alcoholism must be satisfied or ....... ?????
 
-Item spawn ideas
-FoodType
--canned food(CabinCruiser, CruiseLine, CommercialShip, OilRig)
-    -spam
-    -tuna
--
+Need empty water bottle object that extends usable item
