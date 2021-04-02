@@ -29,6 +29,7 @@ public class Main {
         player.printInv();
         //Recursive test method
         startGame();
+
     }
 
 }

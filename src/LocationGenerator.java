@@ -1,19 +1,14 @@
 public class LocationGenerator {
 
     public static Location createLocation() {
-        LocationType type = LocationType.randomLocation();
-        if (type == LocationType.CABIN_CRUISER) {
-            return new CabinCruiser("Cabin Cruiser","A cabin cruiser.");
-        } else if (type == LocationType.COMMERCIAL_SHIP) {
-            return new CommercialShip("Commercial Ship","A commercial ship.");
-        } else if (type == LocationType.CRUISE_LINE) {
-            return new CruiseLine("Cruise Line","A cruise line.");
-        } else if (type == LocationType.ISLAND) {
-            return new Island("Island","An island.");
-        } else if (type == LocationType.OIL_RIG) {
-            return new OilRig("Oil Rig","An oil rig");
-        } else {
-            return new Yacht("Yacht","A yacht.");
-        }
+        Location type = switch (LocationType.randomLocation()) {
+            case CABIN_CRUISER -> new CabinCruiser("Cabin Cruiser", "A Cabin Cruiser");
+            case COMMERCIAL_SHIP -> new CommercialShip("Commercial Ship", "A commercial ship.");
+            case CRUISE_LINE -> new CruiseLine("Cruise Line", "A cruise line.");
+            case ISLAND -> new Island("Island", "An island.");
+            case OIL_RIG -> new OilRig("Oil rig", "An oil rig.");
+            case YACHT -> new Yacht("Yacht", "A yacht");
+        };
+        return type;
     }
 }

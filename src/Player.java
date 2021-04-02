@@ -145,7 +145,7 @@ public class Player {
     }
 
     public void printInv() {
-        for(Item item : inv) {
+        for (Item item : inv) {
             System.out.println(item.getName());
         }
     }
