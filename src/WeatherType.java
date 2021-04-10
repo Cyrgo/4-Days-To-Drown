@@ -28,8 +28,8 @@ public enum WeatherType {
         return this.name;
     }
 
-    public static Object randomWeather() {
-        int rng = (int) (1+ Math.random() * 100);
+    public WeatherType randomWeather() {
+        int rng = (int) (1 + Math.random() * 100);
         for (WeatherType value : WeatherType.values()) {
             if (rng <= value.to && rng >= value.from) {
                 return value;
@@ -37,5 +37,5 @@ public enum WeatherType {
         }
         return WeatherType.CLEAR;
     }
-
 }
+
