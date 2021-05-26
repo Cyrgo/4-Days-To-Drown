@@ -21,14 +21,18 @@ public class Main {
         Player player = new Player(name);
         Boat boat = new Boat();
         boat.boardBoat(player);
-        var location = LocationGenerator.createLocation();
+
+        var weather = Weather.createWeather();
+        weather.weatherEffect();
+
+        var location = Location.createLocation();
         boat.leaveBoat();
         location.enterLocation(player);
         var randomItem = location.getRandomItem();
         player.pickUp(randomItem);
         player.printInv();
-        //Recursive test method
+
+        //Recursive way to test the RNG
         startGame();
     }
-
 }

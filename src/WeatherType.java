@@ -1,10 +1,10 @@
 public enum WeatherType {
     //30%
-    CLEAR(1, 29, "You wake a to nice sunny day, the clouds are clear and there is no chance of bad weather."),
+    CLEAR(1, 29, "Clear Skies"),
     //10%
     RAIN(30, 49, "Rain"),
     //15%
-    WIND(50, 64, "Windy"),
+    WIND(50, 64, "Wind"),
     //10%
     STORM(64, 73, "Lightning Storm"),
     //10%
@@ -28,7 +28,7 @@ public enum WeatherType {
         return this.name;
     }
 
-    public WeatherType randomWeather() {
+    public static WeatherType randomWeather() {
         int rng = (int) (1 + Math.random() * 100);
         for (WeatherType value : WeatherType.values()) {
             if (rng <= value.to && rng >= value.from) {

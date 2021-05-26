@@ -6,3 +6,9 @@ too much alcohol = alcoholism
 alcoholism must be satisfied or ....... ?????
 
 Need empty water bottle object that extends usable item
+
+random animal encounters
+    whales
+    sharks
+    dolphins
+    infected seagulls
