@@ -34,4 +34,8 @@ public class Boat {
         this.player.setBoat(null);
         this.player = null;
     }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 }
