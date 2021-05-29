@@ -110,17 +110,8 @@ public class Player {
         this.inv.add(item);
     }
 
-
-    public void fullHeal() {
-        setHp(this.maxHp);
-    }
-
-    public void healHp(int heal) {
-        setHp(this.currentHp + heal);
-    }
-
-    public void takeDamage(int dmg) {
-        setHp(this.currentHp - dmg);
+    public void consume(Consumable consumable) {
+        consumable.consumableAbility();
     }
 
     public void eat(Food food) {
@@ -132,16 +123,12 @@ public class Player {
         }
     }
 
-    public void consume(Consumable consumable) {
-        consumable.consumableAbility();
+    public void fullHeal() {
+        setHp(this.maxHp);
     }
 
-    public void use(UsableItem usableItem) {
-        usableItem.itemAbility();
-    }
-
-    public void printKcal() {
-        System.out.println(currentKcal);
+    public void healHp(int heal) {
+        setHp(this.currentHp + heal);
     }
 
     public void printInv() {
@@ -149,5 +136,19 @@ public class Player {
             System.out.println(item.getName());
         }
     }
+
+    public void printKcal() {
+        System.out.println(currentKcal);
+    }
+
+    public void takeDamage(int dmg) {
+        setHp(this.currentHp - dmg);
+    }
+
+    public void use(UsableItem usableItem) {
+        usableItem.itemAbility();
+    }
+
+
 
 }

@@ -1,7 +1,6 @@
 public class Weather {
 
-    private String name;
-    private WeatherType weatherType;
+    private final String name;
 
     Weather(String name) {
         this.name = name;
@@ -25,6 +24,4 @@ public class Weather {
 
     public void weatherEffect() {
     }
-
-
 }

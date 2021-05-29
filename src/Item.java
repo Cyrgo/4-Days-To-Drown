@@ -20,7 +20,7 @@ public class Item {
         this.amount = amount;
     }
 
-
-
-
+    public void printItem() {
+        System.out.println(name);
+    }
 }

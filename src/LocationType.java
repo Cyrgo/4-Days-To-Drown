@@ -6,9 +6,9 @@ public enum LocationType {
     OIL_RIG("Oil Rig",68,84),
     YACHT("Yacht", 85,100);
 
-    private String name;
-    private int from;
-    private int to;
+    private final String name;
+    private final int from;
+    private final int to;
 
     LocationType(String name, int from, int to) {
         this.name = name;
