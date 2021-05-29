@@ -22,17 +22,16 @@ public class Location {
         };
     }
 
-    public void enterLocation(Player player) {
-        this.player = player;
-        player.setLocation(this);
-    }
-
     public String getDescription() {
         return this.description;
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public HashMap<ItemRarity, List<Item>> getLootTable() {
+        return null;
     }
 
     public Item getRandomItem() {
@@ -44,19 +43,11 @@ public class Location {
         return itemList.get((int) (Math.random() * itemList.size()));
     }
 
-    public HashMap<ItemRarity, List<Item>> getLootTable() {
-        return null;
-    }
-
-    public void leaveLocation() {
-        if (this.player == null) {
-            throw new NullPointerException("Error: player is not in a location");
-        }
-        this.player.setLocation(null);
-        this.player = null;
-    }
-
     public void printLocation() {
         System.out.println(name);
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }

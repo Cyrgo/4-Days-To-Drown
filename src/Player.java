@@ -2,19 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    private String name;
-    private int maxHp;
-    private int currentHp;
-    private int maxH2o;
+
     private int currentH2o;
-    private int maxKcal;
+    private int currentHp;
     private int currentKcal;
+    private int maxH2o;
+    private int maxHp;
+    private int maxKcal;
     //delete final if you have level system
     private final int invLimit;
+    private List<Item> inv = new ArrayList<Item>();
+    private String name;
+
     private Boat boat;
     private Location location;
-
-    private List<Item> inv = new ArrayList<Item>();
 
     public Player(String name) {
         this.name = name;
@@ -30,84 +31,40 @@ public class Player {
     }
 
     public boolean isAlive() {
-        return this.currentHp > 0;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public int getMaxHp() {
-        return this.maxHp;
-    }
-
-    public int getHp() {
-        return this.currentHp;
-    }
-
-    public int getMaxH2o() {
-        return this.maxH2o;
+        return this.currentHp >= 1 && currentH2o >= 1 && currentKcal >= 1;
     }
 
     public int getH2o() {
         return this.currentH2o;
     }
 
-    public int getMaxKcal() {
-        return this.maxKcal;
+    public int getHp() {
+        return this.currentHp;
     }
 
     public int getKcal() {
         return this.currentKcal;
     }
 
-    public void setMaxHp(int maxHp) {
-        this.maxHp = maxHp;
+    public int getMaxH2o() {
+        return this.maxH2o;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getMaxHp() {
+        return this.maxHp;
     }
 
-    public void setHp(int hp) {
-        this.currentHp = hp;
+    public int getMaxKcal() {
+        return this.maxKcal;
     }
 
-    public void setMaxH2o(int maxH2o) {
-        this.maxH2o = maxH2o;
+    public String getName() {
+        return this.name;
     }
 
-    public void setH2o(int h2o) {
-        this.currentH2o = h2o;
-    }
-
-    public void setMaxKcal(int maxKcal) {
-        this.maxKcal = maxKcal;
-    }
-
-    public void setKcal(int kcal) {
-        if (kcal > maxKcal) {
-            this.currentKcal = this.maxKcal;
-            System.out.println("You are full");
-        } else {
-            this.currentKcal = kcal;
-        }
-    }
-
-    public void setBoat(Boat boat) {
+    public void boardBoat(Boat boat) {
         this.boat = boat;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public void pickUp(Item item) {
-        if (this.inv.size() == 20) {
-            System.out.println("Your inventory is full.");
-            return;
-        }
-        this.inv.add(item);
+        boat.setPlayer(this);
     }
 
     public void consume(Consumable consumable) {
@@ -123,12 +80,41 @@ public class Player {
         }
     }
 
+    public void enterLocation(Location location) {
+        this.location = location;
+        location.setPlayer(this);
+    }
+
     public void fullHeal() {
         setHp(this.maxHp);
     }
 
     public void healHp(int heal) {
         setHp(this.currentHp + heal);
+    }
+
+    public void leaveBoat() {
+        if (this.boat == null) {
+            throw new NullPointerException("ERROR: The player is not on the boat.");
+        }
+        this.boat.setPlayer(null);
+        this.boat = null;
+    }
+
+    public void leaveLocation() {
+        if (this.location == null) {
+            throw new NullPointerException("Error: player is not in a location");
+        }
+        this.location.setPlayer(null);
+        this.location = null;
+    }
+
+    public void pickUp(Item item) {
+        if (this.inv.size() == 20) {
+            System.out.println("Your inventory is full.");
+            return;
+        }
+        this.inv.add(item);
     }
 
     public void printInv() {
@@ -141,6 +127,47 @@ public class Player {
         System.out.println(currentKcal);
     }
 
+    public void setBoat(Boat boat) {
+        this.boat = boat;
+    }
+
+    public void setH2o(int h2o) {
+        this.currentH2o = h2o;
+    }
+
+    public void setHp(int hp) {
+        this.currentHp = hp;
+    }
+
+    public void setKcal(int kcal) {
+        if (kcal > maxKcal) {
+            this.currentKcal = this.maxKcal;
+            System.out.println("You are full");
+        } else {
+            this.currentKcal = kcal;
+        }
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public void setMaxH2o(int maxH2o) {
+        this.maxH2o = maxH2o;
+    }
+
+    public void setMaxHp(int maxHp) {
+        this.maxHp = maxHp;
+    }
+
+    public void setMaxKcal(int maxKcal) {
+        this.maxKcal = maxKcal;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void takeDamage(int dmg) {
         setHp(this.currentHp - dmg);
     }
@@ -148,7 +175,4 @@ public class Player {
     public void use(UsableItem usableItem) {
         usableItem.itemAbility();
     }
-
-
-
 }

@@ -1,11 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
-    private Location location;
     private Item randomItem;
-
-    public Main() {
-    }
+    private Location location;
+    private Weather weather;
 
     public static void main(String[] args) {
         Main game = new Main();
@@ -14,32 +12,32 @@ public class Main {
     }
 
     public void location() {
-        var location = Location.createLocation();
+        setLocation(Location.createLocation());
+        setRandomItem(location.getRandomItem());
         location.printLocation();
-        var randomItem = location.getRandomItem();
-        randomItem.printItem();
     }
 
     public void logicLoop() {
         String name = "Test";
         Player player = new Player(name);
         Boat boat = new Boat();
-        boat.boardBoat(player);
+        player.boardBoat(boat);
 
-        weather();
+        while (player.isAlive()) {
+            weather();
+            location();
 
-        setLocation(Location.createLocation());
-        setRandomItem(Location.createLocation().getRandomItem());
-        location.printLocation();
+            player.leaveBoat();
 
-        boat.leaveBoat();
+            player.enterLocation(location);
+            player.pickUp(randomItem);
+            player.printInv();
+            player.leaveLocation();
 
-        location.enterLocation(player);
-        player.pickUp(randomItem);
-        player.printInv();
-        location.leaveLocation();
-
-        boat.boardBoat(player);
+            player.boardBoat(boat);
+            player.takeDamage(10);
+        }
+        System.out.println("You died.");
     }
 
     public void setLocation(Location location) {
@@ -50,8 +48,12 @@ public class Main {
         this.randomItem = randomItem;
     }
 
+    public void setWeather(Weather weather) {
+        this.weather = weather;
+    }
+
     public void weather() {
-        var weather = Weather.createWeather();
+        setWeather(Weather.createWeather());
         weather.weatherEffect();
     }
 

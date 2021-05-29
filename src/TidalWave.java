@@ -1,8 +1,5 @@
 public class TidalWave extends Weather{
 
-    private Boat boat;
-    private Player player;
-
     TidalWave(String name) {
         super(name);
     }
