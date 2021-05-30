@@ -18,26 +18,38 @@ public class Main {
     }
 
     public void logicLoop() {
+        Day day = new Day();
         String name = "Test";
         Player player = new Player(name);
         Boat boat = new Boat();
         player.boardBoat(boat);
 
-        while (player.isAlive()) {
-            weather();
-            location();
+        while (player.isAlive() && boat.isGood()) {
+            setWeather(Weather.createWeather());
+            weather.weatherEffect(boat, player);
 
-            player.leaveBoat();
+            if(boat.isCantTravel()) {
+                System.out.println("The weather won't allow travel.");
+            } else {
+                location();
 
-            player.enterLocation(location);
-            player.pickUp(randomItem);
-            player.printInv();
-            player.leaveLocation();
+                player.leaveBoat();
 
-            player.boardBoat(boat);
-            player.takeDamage(10);
+                player.enterLocation(location);
+                player.pickUp(randomItem);
+                player.printInv();
+                player.leaveLocation();
+
+                player.boardBoat(boat);
+            }
+            day.addDay();
         }
-        System.out.println("You died.");
+        if (boat.isGood() == false) {
+            System.out.println("The boat has been destroyed, you drowned.");
+        } else if (player.isAlive() == false) {
+            System.out.println("You died.");
+        }
+        day.printDay();
     }
 
     public void setLocation(Location location) {
@@ -50,11 +62,6 @@ public class Main {
 
     public void setWeather(Weather weather) {
         this.weather = weather;
-    }
-
-    public void weather() {
-        setWeather(Weather.createWeather());
-        weather.weatherEffect();
     }
 
     public void welcomeMessage() {

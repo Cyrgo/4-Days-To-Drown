@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Boat {
+    private boolean cantTravel;
     private int durability;
     private int invLimit;
     private int fuel;
@@ -22,9 +23,21 @@ public class Boat {
         this.fuel = fuel;
     }
 
+    public boolean isCantTravel() {
+        return cantTravel;
+    }
+
+    public boolean isGood() {
+        return this.durability >= 1;
+    }
+
     public void boardBoat(Player player) {
         this.player = player;
         player.setBoat(this);
+    }
+
+    public void setCantTravel() {
+        cantTravel = true;
     }
 
     public void leaveBoat() {
@@ -37,5 +50,10 @@ public class Boat {
 
     public void setPlayer(Player player) {
         this.player = player;
+    }
+
+    public void takeDmg(int dmg) {
+        durability -= dmg;
+        System.out.println("Your boat lost " + dmg + " durability.");
     }
 }

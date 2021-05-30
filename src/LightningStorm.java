@@ -8,7 +8,7 @@ public class LightningStorm extends Weather {
     }
 
     @Override
-    public void weatherEffect() {
+    public void weatherEffect(Boat boat, Player player) {
         System.out.println("The crash and flash of the storm wakes you.");
         System.out.println("It is best to stay inside.");
     }

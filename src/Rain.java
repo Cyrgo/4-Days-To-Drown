@@ -9,7 +9,7 @@ public class Rain extends Weather {
     }
 
     @Override
-    public void weatherEffect() {
+    public void weatherEffect(Boat boat, Player player) {
         System.out.println("It is raining.");
     }
 }

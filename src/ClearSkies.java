@@ -5,7 +5,7 @@ public class ClearSkies extends Weather{
     }
 
     @Override
-    public void weatherEffect() {
+    public void weatherEffect(Boat boat, Player player) {
         System.out.println("The skies are clear. You are free to explore.");
     }
 }

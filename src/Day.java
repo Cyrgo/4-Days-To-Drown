@@ -1,7 +1,11 @@
-public class TimePassed {
+public class Day {
     private int day;
 
-    public TimePassed(int day) {
+    Day() {
+        this.day = day;
+    }
+
+    public Day(int day) {
         this.day = day;
     }
 
@@ -11,6 +15,10 @@ public class TimePassed {
 
     public void setDay(int day) {
         this.day = day;
+    }
+
+    public void printDay() {
+        System.out.println("You survived " + day + " day(s).");
     }
 
     public void addDay() {

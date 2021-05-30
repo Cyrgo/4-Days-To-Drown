@@ -16,6 +16,7 @@ public class Player {
 
     private Boat boat;
     private Location location;
+    private Weather weather;
 
     public Player(String name) {
         this.name = name;
@@ -31,7 +32,7 @@ public class Player {
     }
 
     public boolean isAlive() {
-        return this.currentHp >= 1 && currentH2o >= 1 && currentKcal >= 1;
+        return this.currentHp >= 1 && this.currentH2o >= 1 && this.currentKcal >= 1;
     }
 
     public int getH2o() {
@@ -65,6 +66,11 @@ public class Player {
     public void boardBoat(Boat boat) {
         this.boat = boat;
         boat.setPlayer(this);
+    }
+
+    public void weatherBefore(Weather weather) {
+        this.weather = weather;
+        weather.setPlayer(this);
     }
 
     public void consume(Consumable consumable) {
@@ -107,6 +113,10 @@ public class Player {
         }
         this.location.setPlayer(null);
         this.location = null;
+    }
+
+    public void loseH2o(int h2oLoss) {
+        setH2o(this.currentH2o - h2oLoss);
     }
 
     public void pickUp(Item item) {
@@ -168,11 +178,16 @@ public class Player {
         this.name = name;
     }
 
-    public void takeDamage(int dmg) {
+    public void setWeather(Weather weather) {
+        this.weather = weather;
+    }
+
+    public void takeDmg(int dmg) {
         setHp(this.currentHp - dmg);
     }
 
     public void use(UsableItem usableItem) {
         usableItem.itemAbility();
     }
+
 }

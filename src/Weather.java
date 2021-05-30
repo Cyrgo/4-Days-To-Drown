@@ -1,5 +1,8 @@
 public class Weather {
 
+    Boat boat;
+    Player player;
+
     private final String name;
 
     Weather(String name) {
@@ -22,6 +25,14 @@ public class Weather {
         };
     }
 
-    public void weatherEffect() {
+    public void setBoat(Boat boat) {
+        this.boat = boat;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public void weatherEffect(Boat boat, Player player) {
     }
 }

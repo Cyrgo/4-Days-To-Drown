@@ -8,7 +8,13 @@ public class Hurricane extends Weather {
     }
 
     @Override
-    public void weatherEffect() {
+    public void weatherEffect(Boat boat, Player player) {
+        setBoat(boat);
+        boat.setCantTravel();
+        setPlayer(player);
         System.out.println("Get ready. A hurricane is on its way.");
+        boat.takeDmg(50);
+        player.takeDmg(25);
+
     }
 }
