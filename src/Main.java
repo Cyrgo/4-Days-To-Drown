@@ -26,6 +26,7 @@ public class Main {
         player.boardBoat(boat);
 
         while (player.isAlive() && boat.isGood()) {
+            day.printDay();
             setWeather(Weather.createWeather());
             weather.weatherEffect(boat, player);
 
@@ -49,7 +50,7 @@ public class Main {
         } else if (!player.isAlive()) {
             System.out.println("You died.");
         }
-        day.printDay();
+        day.daysSurvived();
     }
 
     public void setLocation(Location location) {

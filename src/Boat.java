@@ -35,6 +35,10 @@ public class Boat {
         player.setBoat(this);
     }
 
+    public void canTravel() {
+        cantTravel = false;
+    }
+
     public void setCantTravel() {
         cantTravel = true;
     }
