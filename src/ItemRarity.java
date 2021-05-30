@@ -1,10 +1,10 @@
 public enum ItemRarity {
-    COMMON(1,60),
-    UNCOMMON(61,90),
-    RARE(91,100);
+    COMMON(1, 60),
+    UNCOMMON(61, 90),
+    RARE(91, 100);
 
-    private int from;
-    private int to;
+    private final int from;
+    private final int to;
 
     ItemRarity(int from, int to) {
         this.from = from;
@@ -12,8 +12,8 @@ public enum ItemRarity {
     }
 
     public static ItemRarity randomRarity() {
-        int rng = (int) (1+ Math.random() * 100);
-        for (ItemRarity value: ItemRarity.values()) {
+        int rng = (int) (1 + Math.random() * 100);
+        for (ItemRarity value : ItemRarity.values()) {
             if (rng <= value.to && rng >= value.from) {
                 return value;
             }

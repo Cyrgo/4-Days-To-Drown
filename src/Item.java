@@ -1,11 +1,9 @@
 public class Item {
-    private String name;
+    private final String name;
     private int amount;
-    private BoatItemType boatItemType;
 
-    public Item(String name, int amount) {
+    public Item(String name) {
         this.name = name;
-        this.amount = amount;
     }
 
     public String getName() {

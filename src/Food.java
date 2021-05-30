@@ -1,6 +1,6 @@
 public class Food extends Consumable {
 
-    private FoodType foodType;
+    private final FoodType foodType;
 
     public Food(FoodType foodType, int amount) {
         super(foodType.getName(), amount);
@@ -14,5 +14,5 @@ public class Food extends Consumable {
     public int getKcal() {
         return this.foodType.getKcal();
     }
-    
+
 }

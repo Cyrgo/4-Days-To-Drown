@@ -1,4 +1,4 @@
-public class EmptyWaterBottle extends UsableItem{
+public class EmptyWaterBottle extends UsableItem {
     public EmptyWaterBottle(String name, int amount, int durability) {
         super(name, amount, durability);
     }

@@ -15,6 +15,5 @@ public class Hurricane extends Weather {
         System.out.println("Get ready. A hurricane is on its way.");
         boat.takeDmg(50);
         player.takeDmg(25);
-
     }
 }

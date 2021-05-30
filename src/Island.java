@@ -10,13 +10,13 @@ public class Island extends Location {
 
     @Override
     public HashMap<ItemRarity, List<Item>> getLootTable() {
-        HashMap<ItemRarity, List<Item>> lootTable = new HashMap<ItemRarity, List<Item>>();
-        List<Item> commonLoot = new ArrayList<Item>();
-        List<Item> uncommonLoot = new ArrayList<Item>();
-        List<Item> rareLoot = new ArrayList<Item>();
+        HashMap<ItemRarity, List<Item>> lootTable = new HashMap<>();
+        List<Item> commonLoot = new ArrayList<>();
+        List<Item> uncommonLoot = new ArrayList<>();
+        List<Item> rareLoot = new ArrayList<>();
         //Common Loot Objects
-        Food mango = new Food(FoodType.MANGO,1);
-        Food pineapple = new Food(FoodType.PINEAPPLE,1);
+        Food mango = new Food(FoodType.MANGO, 1);
+        Food pineapple = new Food(FoodType.PINEAPPLE, 1);
         commonLoot.add(mango);
         commonLoot.add(pineapple);
         //Uncommon Loot Objects
@@ -30,5 +30,4 @@ public class Island extends Location {
         lootTable.put(ItemRarity.RARE, rareLoot);
         return lootTable;
     }
-
 }

@@ -3,7 +3,7 @@ public class UsableItem extends Item {
     private int durability;
 
     public UsableItem(String name, int amount, int durability) {
-        super(name, amount);
+        super(name);
         this.durability = durability;
     }
 

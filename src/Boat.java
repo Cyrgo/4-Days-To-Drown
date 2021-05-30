@@ -5,16 +5,15 @@ public class Boat {
     private boolean cantTravel;
     private int durability;
     private int invLimit;
-    private int fuel;
+    private final int fuel;
     private Player player;
     private Weather weather;
 
-    private List<Item> inv = new ArrayList<Item>();
+    private List<Item> inv = new ArrayList<>();
 
     public Boat() {
         this.durability = 100;
         this.fuel = 100;
-        this.inv = inv;
         this.invLimit = 40;
     }
 
@@ -23,7 +22,7 @@ public class Boat {
         this.fuel = fuel;
     }
 
-    public boolean isCantTravel() {
+    public boolean isNotTravel() {
         return cantTravel;
     }
 

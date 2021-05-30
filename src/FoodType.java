@@ -1,19 +1,19 @@
 public enum FoodType {
-    BANANA(false, "Banana",15,0),
-    CAN_SPAM(true,"Can of Spam",30,0),
-    CAN_TUNA(true,"Can of Tuna",20,5),
-    COCONUT(false, "Coconut",10,10),
-    MANGO(false,"Mango",5,5),
-    PINEAPPLE(false,"Pineapple",10,5),
-    SNACK(false, "Snack",50,-5),
-    SMALLFISH(true, "Small Fish",50,0),
-    MEDIUMFISH(true, "Medium Fish",100,0),
-    LARGEFISH(true, "Small Fish",150,0);
+    BANANA(false, "Banana", 15, 0),
+    CAN_SPAM(true, "Can of Spam", 30, 0),
+    CAN_TUNA(true, "Can of Tuna", 20, 5),
+    COCONUT(false, "Coconut", 10, 10),
+    MANGO(false, "Mango", 5, 5),
+    PINEAPPLE(false, "Pineapple", 10, 5),
+    SNACK(false, "Snack", 50, -5),
+    SMALLFISH(true, "Small Fish", 50, 0),
+    MEDIUMFISH(true, "Medium Fish", 100, 0),
+    LARGEFISH(true, "Small Fish", 150, 0);
 
     private boolean isCookable;
-    private String name;
-    private int kcal;
-    private int h2o;
+    private final String name;
+    private final int kcal;
+    private final int h2o;
 
 
     FoodType(boolean isCookable, String name, int kcal, int h2o) {
@@ -33,5 +33,4 @@ public enum FoodType {
     public int getKcal() {
         return this.kcal;
     }
-
 }

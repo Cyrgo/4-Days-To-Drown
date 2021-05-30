@@ -1,9 +1,9 @@
-public class BoatItem extends Item{
+public class BoatItem extends Item {
 
-    private BoatItemType boatItemType;
+    private final BoatItemType boatItemType;
 
     public BoatItem(BoatItemType boatItemType, int amount) {
-        super(boatItemType.getName(), amount);
+        super(boatItemType.getName());
         this.boatItemType = boatItemType;
     }
 }

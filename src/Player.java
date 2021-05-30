@@ -9,26 +9,22 @@ public class Player {
     private int maxH2o;
     private int maxHp;
     private int maxKcal;
-    //delete final if you have level system
-    private final int invLimit;
-    private List<Item> inv = new ArrayList<Item>();
+    private final List<Item> inv = new ArrayList<>();
     private String name;
 
     private Boat boat;
     private Location location;
-    private Weather weather;
 
     public Player(String name) {
         this.name = name;
         this.maxHp = 100;
-        this.currentHp = 75;
         this.maxH2o = 100;
-        this.currentH2o = 75;
         this.maxKcal = 100;
+        this.currentHp = 75;
+        this.currentH2o = 75;
         this.currentKcal = 75;
-        this.invLimit = 20;
-        this.inv = inv;
-
+        //delete final if you have level system
+        int invLimit = 20;
     }
 
     public boolean isAlive() {
@@ -70,6 +66,9 @@ public class Player {
 
     public void consume(Consumable consumable) {
         consumable.consumableAbility();
+    }
+
+    public void drinkAlcohol(Alcohol alcohol) {
     }
 
     public void eat(Food food) {
@@ -173,10 +172,6 @@ public class Player {
         this.name = name;
     }
 
-    public void setWeather(Weather weather) {
-        this.weather = weather;
-    }
-
     public void takeDmg(int dmg) {
         setHp(this.currentHp - dmg);
     }
@@ -184,5 +179,4 @@ public class Player {
     public void use(UsableItem usableItem) {
         usableItem.itemAbility();
     }
-
 }

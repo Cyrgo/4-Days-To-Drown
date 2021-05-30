@@ -9,10 +9,6 @@ public class Weather {
         this.name = name;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
     public static Weather createWeather() {
         return switch (WeatherType.randomWeather()) {
             case CLEAR -> new ClearSkies("Clear Skies");
@@ -23,6 +19,10 @@ public class Weather {
             case TIDALWAVE -> new TidalWave("Tidal Wave");
             case HURRICANE -> new Hurricane("Hurricane");
         };
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public void setBoat(Boat boat) {

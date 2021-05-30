@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+
     private Item randomItem;
     private Location location;
     private Weather weather;
@@ -28,7 +29,7 @@ public class Main {
             setWeather(Weather.createWeather());
             weather.weatherEffect(boat, player);
 
-            if(boat.isCantTravel()) {
+            if (boat.isNotTravel()) {
                 System.out.println("The weather won't allow travel.");
             } else {
                 location();
@@ -39,14 +40,13 @@ public class Main {
                 player.pickUp(randomItem);
                 player.printInv();
                 player.leaveLocation();
-
                 player.boardBoat(boat);
             }
             day.addDay();
         }
-        if (boat.isGood() == false) {
+        if (!boat.isGood()) {
             System.out.println("The boat has been destroyed, you drowned.");
-        } else if (player.isAlive() == false) {
+        } else if (!player.isAlive()) {
             System.out.println("You died.");
         }
         day.printDay();

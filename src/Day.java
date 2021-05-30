@@ -2,7 +2,6 @@ public class Day {
     private int day;
 
     Day() {
-        this.day = day;
     }
 
     public Day(int day) {
@@ -24,5 +23,4 @@ public class Day {
     public void addDay() {
         this.day += 1;
     }
-
 }

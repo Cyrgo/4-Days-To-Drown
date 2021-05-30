@@ -1,4 +1,4 @@
-public class ClearSkies extends Weather{
+public class ClearSkies extends Weather {
 
     ClearSkies(String name) {
         super(name);

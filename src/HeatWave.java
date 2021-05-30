@@ -1,5 +1,4 @@
 public class HeatWave extends Weather {
-
     private Player player;
 
     HeatWave(String name) {

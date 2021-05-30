@@ -4,10 +4,9 @@ public enum Direction {
     EAST("East"),
     SOUTH("South");
 
-    private String name;
+    private final String name;
 
     Direction(String name) {
         this.name = name;
     }
-
 }
