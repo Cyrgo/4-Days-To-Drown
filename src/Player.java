@@ -68,11 +68,6 @@ public class Player {
         boat.setPlayer(this);
     }
 
-    public void weatherBefore(Weather weather) {
-        this.weather = weather;
-        weather.setPlayer(this);
-    }
-
     public void consume(Consumable consumable) {
         consumable.consumableAbility();
     }
