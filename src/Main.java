@@ -40,6 +40,7 @@ public class Main {
                 player.enterLocation(location);
                 player.pickUp(randomItem);
                 player.printInv();
+                //player.printArray();
                 player.leaveLocation();
                 player.boardBoat(boat);
             }

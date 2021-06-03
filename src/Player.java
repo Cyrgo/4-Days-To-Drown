@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Player {
@@ -9,7 +10,7 @@ public class Player {
     private int maxH2o;
     private int maxHp;
     private int maxKcal;
-    private final List<Item> inv = new ArrayList<>();
+    private List<Item> inv = new ArrayList<>();
     private String name;
 
     private Boat boat;
@@ -93,6 +94,10 @@ public class Player {
         setHp(this.currentHp + heal);
     }
 
+    public void invSort() {
+        inv.sort(((o1, o2) -> o1.getName().compareTo(o2.getName())));
+    }
+
     public void leaveBoat() {
         if (this.boat == null) {
             throw new NullPointerException("ERROR: The player is not on the boat.");
@@ -122,10 +127,16 @@ public class Player {
     }
 
     public void printInv() {
+        invSort();
         for (Item item : inv) {
             System.out.println(item.getName());
         }
     }
+
+    /*public void printArray() {
+        Object[] array = inv.toArray(new Object[inv.size()]);
+        System.out.println(Arrays.toString(array));
+    }*/
 
     public void printKcal() {
         System.out.println(currentKcal);
