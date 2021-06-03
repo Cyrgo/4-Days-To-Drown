@@ -1,9 +1,8 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Player {
 
+    private Boat boat;
     private int currentH2o;
     private int currentHp;
     private int currentKcal;
@@ -11,10 +10,8 @@ public class Player {
     private int maxHp;
     private int maxKcal;
     private List<Item> inv = new ArrayList<>();
-    private String name;
-
-    private Boat boat;
     private Location location;
+    private String name;
 
     public Player(String name) {
         this.name = name;
@@ -121,15 +118,17 @@ public class Player {
     public void pickUp(Item item) {
         if (this.inv.size() == 20) {
             System.out.println("Your inventory is full.");
-            return;
+        } else {
+            this.inv.add(item);
+            item.setAmount(1);
         }
-        this.inv.add(item);
     }
 
     public void printInv() {
         invSort();
+
         for (Item item : inv) {
-            System.out.println(item.getName());
+            System.out.println(item.getName() + ": " + item.getAmount());
         }
     }
 
